@@ -1,0 +1,5 @@
+<div class="container">
+  <ng-container *ngIf="members$ | async as members">
+    <app-pano-list [members]="members"></app-pano-list>
+  </ng-container>
+</div>

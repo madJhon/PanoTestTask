@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+.pano-list {
+  display: grid;
+  gap: 1px;
+
+  background-color: rgb(191,191,191);
+
+  grid-template-rows: repeat(30, 50px);
+  grid-template-columns: repeat(20, 50px);
+
+}
