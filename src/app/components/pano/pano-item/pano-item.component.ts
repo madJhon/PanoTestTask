@@ -1,22 +1,31 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { Member } from '../../../models/member.model';
 
 @Component({
   selector: 'app-pano-item',
   templateUrl: './pano-item.component.html',
-  styleUrls: ['./pano-item.component.scss']
+  styleUrls: ['./pano-item.component.scss'],
 })
 export class PanoItemComponent implements OnInit {
-  @Input() member: Member;
+  @Input() member: Member | null;
 
-  url: string = "/assets/images/person_default_picture.jpg";
+  url: string;
+  defaultUrl = '/assets/images/person_default_picture.jpg';
+  showTooltip = false;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    this.url = this.member?.image_url || this.defaultUrl;
+  }
+
+  @HostListener('mouseover') onMouseEnter() {
     if (this.member) {
-      this.url = this.member.image_url;
+      this.showTooltip = true;
     }
   }
 
+  @HostListener('mouseleave') onMouseLeave() {
+    this.showTooltip = false;
+  }
 }

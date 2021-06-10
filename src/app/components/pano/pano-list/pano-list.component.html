@@ -1,5 +1,5 @@
-<div class="pano-list">
-  <ng-container *ngFor="let key of gridKeys">
-    <app-pano-item [member]="grid.get(key)"></app-pano-item>
+<div class="pano-list" [ngStyle]="styles">
+  <ng-container *ngFor="let item of [].constructor(gridSize); let i = index">
+    <app-pano-item [member]="gridMap[i + 1] || null"></app-pano-item>
   </ng-container>
 </div>
