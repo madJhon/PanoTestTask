@@ -29,8 +29,8 @@ export class PanoListComponent implements OnInit {
     return {
       display: 'grid',
       'gap': '1px',
-      'grid-template-columns': `repeat(${this.columns}, 50px)`,
-      'grid-template-rows': `repeat(${this.rows}, 50px)`
+      'grid-template-columns': `repeat(${this.columns}, 65px)`,
+      'grid-template-rows': `repeat(${this.rows}, 65px)`
     };
   }
 
